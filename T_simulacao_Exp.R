@@ -3,7 +3,7 @@ simulacao = function(bv1=1,bv2=1,bv3=1,av1=1,av2=1,av3=1,alfa=1,i=500,seed=1,plt
   t = 1
   tempo = 1:i
   set.seed(seed)
-  #criando vetor das proporções em cada vértice para graficar
+  #criando vetor das proporÃ§Ãµes em cada vÃ©rtice para graficar
   vb1 = rep(0, length(tempo))
   vb2 = rep(0, length(tempo))
   vb3 = rep(0, length(tempo))
@@ -12,14 +12,14 @@ simulacao = function(bv1=1,bv2=1,bv3=1,av1=1,av2=1,av3=1,alfa=1,i=500,seed=1,plt
   va3 = rep(0, length(tempo))
   
   while(t<=i){
-      ##variáveis auxiliares das bolas adicionadas em cada rodada
+      ##variÃ¡veis auxiliares das bolas adicionadas em cada rodada
       auxb1 = 0
       auxb2 = 0
       auxb3 = 0
       auxa1 = 0
       auxa2 = 0
       auxa3 = 0
-      ##definindo as proporções
+      ##definindo as proporÃ§Ãµes
       vb1[t] = bv1/(bv1+bv2+bv3)
       vb2[t] = bv2/(bv1+bv2+bv3)
       vb3[t] = bv3/(bv1+bv2+bv3)
@@ -33,18 +33,18 @@ simulacao = function(bv1=1,bv2=1,bv3=1,av1=1,av2=1,av3=1,alfa=1,i=500,seed=1,plt
       ##Probabilidade das azuis
       pa1 = exp(-alfa*vb1[t])/(exp(-alfa*vb1[t])+exp(-alfa*vb2[t]))
       pa2 = 1-pa1
-      ##gerando um valor aleatório entre 0 e 1 para as bolas brancas
+      ##gerando um valor aleatÃ³rio entre 0 e 1 para as bolas brancas
       valor = runif(1,0,1)
-      ##Verificando para qual vértice as bolas brancas irao
+      ##Verificando para qual vÃ©rtice as bolas brancas irao
       if(valor <= pb1){
           auxb1 = auxb1 + 1
       }
       if(valor > pb1){
           auxb2  = auxb2 + 1
       }
-      ##gerando um valor aleatório entre 0 e 1 para as bolas brancas
+      ##gerando um valor aleatÃ³rio entre 0 e 1 para as bolas brancas
       valor = runif(1,0,1)
-      ##Verificando para qual vértice as bolas azuis irao
+      ##Verificando para qual vÃ©rtice as bolas azuis irao
       if(valor <= pa1){
           auxa1 = auxa1 + 1
       }
@@ -58,18 +58,18 @@ simulacao = function(bv1=1,bv2=1,bv3=1,av1=1,av2=1,av3=1,alfa=1,i=500,seed=1,plt
       ##Probabilidade das azuis
       pa2 = exp(-alfa*vb2[t])/(exp(-alfa*vb2[t])+exp(-alfa*vb3[t]))
       pa3 = 1-pa2    
-      ##gerando um valor aleatório entre 0 e 1 para as bolas brancas
+      ##gerando um valor aleatÃ³rio entre 0 e 1 para as bolas brancas
       valor = runif(1,0,1)
-      ##Verificando para qual vértice as bolas brancas irao
+      ##Verificando para qual vÃ©rtice as bolas brancas irao
       if(valor <= pb2){
           auxb2 = auxb2 + 1
       }
       if(valor > pb2){
           auxb3 = auxb3 + 1
       }
-      ##gerando um valor aleatório entre 0 e 1 para as bolas brancas
+      ##gerando um valor aleatÃ³rio entre 0 e 1 para as bolas brancas
       valor = runif(1,0,1)
-      ##Verificando para qual vértice as bolas azuis irao
+      ##Verificando para qual vÃ©rtice as bolas azuis irao
       if(valor <= pa2){
           auxa2 = auxa2 + 1
       }
@@ -83,18 +83,18 @@ simulacao = function(bv1=1,bv2=1,bv3=1,av1=1,av2=1,av3=1,alfa=1,i=500,seed=1,plt
       ##Probabilidade das azuis
       pa1 = exp(-alfa*vb1[t])/(exp(-alfa*vb1[t])+exp(-alfa*vb3[t]))
       pa3 = 1-pa1
-      ##gerando um valor aleatório entre 0 e 1 para as bolas brancas
+      ##gerando um valor aleatÃ³rio entre 0 e 1 para as bolas brancas
       valor = runif(1,0,1)
-      ##Verificando para qual vértice as bolas brancas irao
+      ##Verificando para qual vÃ©rtice as bolas brancas irao
       if(valor <= pb1){
           auxb1 = auxb1 + 1
       }
       if(valor > pb1){
           auxb3 = auxb3 + 1
       }
-      ##gerando um valor aleatório entre 0 e 1 para as bolas brancas
+      ##gerando um valor aleatÃ³rio entre 0 e 1 para as bolas brancas
       valor = runif(1,0,1)
-      ##Verificando para qual vértice as bolas azuis irao
+      ##Verificando para qual vÃ©rtice as bolas azuis irao
       if(valor <= pa1){
           auxa1 = auxa1 + 1
       }

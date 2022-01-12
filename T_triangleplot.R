@@ -1,4 +1,4 @@
-source("simulacao_Exp.R")
+source("T_simulacao_Exp.R")
 alpha <- 5.35559
 init <- 2
 N <- 10
